@@ -2,10 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
     font-family: 'Edu VIC WA NT Beginner', cursive;
-    
 }
+
+.app{
+    min-height: 100vh;
+}
+
 label {
     font-weight: 700;
     font-size: 20px;

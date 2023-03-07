@@ -3,7 +3,7 @@ import AppRouter from "./router/AppRouter";
 
 function App() {
   return (
-    <div >
+    <div className="bg-light app">
       <AppRouter/>
     </div>
   );
