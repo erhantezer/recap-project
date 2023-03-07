@@ -14,6 +14,7 @@ const url = "https://63a16242a543280f7754aaa3.mockapi.io/products";
 export const AppProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
 
     const getProducts = async () => {
         setLoading(true)
@@ -21,18 +22,22 @@ export const AppProvider = ({ children }) => {
             const { data } = await axios(url)
             setProducts(data)
             setLoading(false)
+            setError(false)
         } catch (error) {
             console.log(error)
             setLoading(false)
+            setError(true)
         }
     }
+
+    console.log(products)
 
     useContext(() => {
         getProducts()
     },[])
 
     return (
-        <AppContext.Provider value={{ products, loading }}>
+        <AppContext.Provider value={{ products, loading, error }}>
             {children}
         </AppContext.Provider>
     )
