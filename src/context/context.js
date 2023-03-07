@@ -13,8 +13,8 @@ export const AppProvider = ({children}) => {
 
 
     return(
-            <AppContext value={{}}>
+            <AppContext.Provider value={{}}>
                 {children}
-            </AppContext>
+            </AppContext.Provider>
         )
 }
