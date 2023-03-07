@@ -1,21 +1,17 @@
-import React from 'react'
 
-const initialState = {
-    name: "",
-    image:"",
-    price:"",
-    dampingRate: 0.8,
-    amount: 1,
-}
+import useChangeSubmit from '../hooks/useChangeSubmit';
+
+
+
+
 
 const ProductForm = () => {
-
-
+    const { handleChange, handleSubmit, formChange } = useChangeSubmit();
 
     return (
         <article id="add-product" className="mb-4 mt-4">
             <h1 className="text-center">New Product</h1>
-            <form className="p-2" >
+            <form className="p-2" onSubmit={handleSubmit} >
                 <div className="mb-3">
                     <label for="add-name" className="form-label">
                         Product Name
@@ -24,8 +20,8 @@ const ProductForm = () => {
                         type="text"
                         className="form-control"
                         id="name"
-                        
-                        
+                        value={formChange.name}
+                        onChange={handleChange}
                         required
                     />
                 </div>
@@ -37,7 +33,8 @@ const ProductForm = () => {
                         type="number"
                         className="form-control"
                         id="price"
-                        
+                        value={formChange.number}
+                        onChange={handleChange}
                         required
                     />
                 </div>
@@ -49,7 +46,8 @@ const ProductForm = () => {
                         type="number"
                         className="form-control"
                         id="amount"
-                        
+                        value={formChange.number}
+                        onChange={handleChange}
                         required
                     />
                 </div>
@@ -64,7 +62,8 @@ const ProductForm = () => {
                         type="url"
                         className="form-control"
                         id="image"
-                        
+                        value={formChange.image}
+                        onChange={handleChange}
                         aria-describedby="basic-addon3"
                         required
                     />
