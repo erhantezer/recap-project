@@ -5,6 +5,8 @@ import Main from '../pages/Main'
 import About from '../pages/About'
 import ProductList from '../pages/ProductList'
 import NewProduct from '../pages/NewProduct'
+import UpdateProduct from '../pages/UpdateProduct'
+import PrivateRouter from './PrivateRouter'
 
 const AppRouter = () => {
     return (
@@ -15,6 +17,9 @@ const AppRouter = () => {
                 <Route path='about' element={<About/>} />
                 <Route path='product-list' element={<ProductList/>} />
                 <Route path='new-product' element={<NewProduct/>} />
+                <Route path='/update-product' element={<PrivateRouter/>}>
+                    <Route path='' element={<UpdateProduct/>}/>
+                </Route>
             </Routes>
         </BrowserRouter>
     )
