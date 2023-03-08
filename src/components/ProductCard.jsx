@@ -2,12 +2,11 @@ import React from 'react'
 import { useGlobalContext } from '../context/context'
 import { useNavigate } from 'react-router-dom';
 
-const ProductCard = () => {
-    const { products, getProducts } = useGlobalContext()
-    const { name, image, price, dampingRate, amount, id } = products
+const ProductCard = ({item}) => {
+    const { getProducts } = useGlobalContext()
+    const { name, image, price, dampingRate, amount, id } = item
     const navigate = useNavigate();
 
-    console.log(name)
 
 
     return (

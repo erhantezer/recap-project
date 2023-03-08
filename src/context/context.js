@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 
 
@@ -22,10 +22,10 @@ export const AppProvider = ({ children }) => {
         setLoading(true)
         try {
             const { data } = await axios(url)
-            data.map((item) => setProducts(item))
+            setProducts(data)
             setLoading(false)
             setError(false)
-            console.log("data")
+            
         } catch (error) {
             console.log(error)
             setLoading(false)
@@ -35,7 +35,7 @@ export const AppProvider = ({ children }) => {
 
     console.log(products)
 
-    useContext(() => {
+    useEffect(() => {
         getProducts()
     },[])
 
