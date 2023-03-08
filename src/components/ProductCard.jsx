@@ -33,7 +33,7 @@ const ProductCard = ({item}) => {
                                         {(price * dampingRate).toFixed(2)}
                                     </span>
                                     <span className="h5 text-dark text-decoration-line-through">
-                                        price
+                                        {(price).toFixed(2)}
                                     </span>
                                 </p>
                             </div>
@@ -44,7 +44,7 @@ const ProductCard = ({item}) => {
                                         <i className="fas fa-minus"></i>
                                     </button>
                                     <p className="d-inline mx-4" id="product-quantity">
-
+                                        {amount}
                                     </p>
                                     <button
                                         className="btn btn-secondary btn-sm">
@@ -61,7 +61,7 @@ const ProductCard = ({item}) => {
                             <div className="mt-2">
                                 Product Total: $
                                 <span className="product-line-price">
-                                    hello price
+                                    {(price * dampingRate * amount).toFixed(2)}
                                 </span>
                             </div>
                         </div>
