@@ -18,13 +18,22 @@ const ProductCard = ({item}) => {
             } catch (error) {
                 console.log(error)
             }
+            getProducts()
         } else {
             handleDelete()
         }
-    }
-    const handlePlus = () => {
         
     }
+
+    const handlePlus = () => {
+        try {
+            axios.put(`${url}/${id}`, { ...item, amount: amount + 1 })
+        } catch (error) {
+            console.log(error)
+        }
+        getProducts()
+    }
+    
     const handleDelete = () => {
         
     }
