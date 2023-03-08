@@ -6,6 +6,7 @@ import CardTotal from '../components/CardTotal';
 const ProductList = () => {
     const { products, loading, error } = useGlobalContext();
 
+    console.log(products)
 
     if (loading) {
         return <p className="text-center text-danger w-100">Loading....</p>
