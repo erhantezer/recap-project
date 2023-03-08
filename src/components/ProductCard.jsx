@@ -5,17 +5,17 @@ import axios from 'axios';
 
 const url = "https://63a16242a543280f7754aaa3.mockapi.io/products";
 
-const ProductCard = ({item}) => {
+const ProductCard = ({ item }) => {
     const { getProducts } = useGlobalContext()
     const { name, image, price, dampingRate, amount, id } = item
     const navigate = useNavigate();
 
 
     //! put(update)
-    const handleMinus =async () => {
-        if(amount > 0) {
+    const handleMinus = async () => {
+        if (amount > 0) {
             try {
-                await axios.put(`${url}/${id}`, {...item, amount: amount - 1})
+                await axios.put(`${url}/${id}`, { ...item, amount: amount - 1 })
             } catch (error) {
                 console.log(error)
             }
@@ -23,11 +23,11 @@ const ProductCard = ({item}) => {
         } else {
             handleDelete()
         }
-        
+
     }
 
     //! put(update)
-    const handlePlus =async () => {
+    const handlePlus = async () => {
         try {
             await axios.put(`${url}/${id}`, { ...item, amount: amount + 1 })
         } catch (error) {
@@ -37,13 +37,19 @@ const ProductCard = ({item}) => {
     }
 
     //! delete
-    const handleDelete =async () => {
+    const handleDelete = async () => {
         try {
             await axios.delete(`${url}/${id}`)
         } catch (error) {
             console.log(error)
         }
         getProducts()
+    }
+
+
+    //! edit state uselocation olarak updateTotal sayfasında karşıla
+    const editProduct = () => {
+        navigate("/update-product", { state: item })
     }
 
     return (
@@ -60,7 +66,7 @@ const ProductCard = ({item}) => {
                     </div>
                     <div className="col-md-7">
                         <div className="card-body">
-                            <h5 className="card-title" role="button" >
+                            <h5 className="card-title" role="button" onClick={editProduct}>
                                 {name}
                             </h5>
                             <div className="product-price">
