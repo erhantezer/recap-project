@@ -1,6 +1,9 @@
 import React from 'react'
 import { useGlobalContext } from '../context/context'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+const url = "https://63a16242a543280f7754aaa3.mockapi.io/products";
 
 const ProductCard = ({item}) => {
     const { getProducts } = useGlobalContext()
@@ -9,13 +12,21 @@ const ProductCard = ({item}) => {
 
 
     const handleMinus = () => {
-        
+        if(amount > 0) {
+            try {
+                axios.put(`${url}/${id}`, {...item, amount: amount - 1})
+            } catch (error) {
+                console.log(error)
+            }
+        } else {
+            handleDelete()
+        }
     }
     const handlePlus = () => {
         
     }
     const handleDelete = () => {
-       
+        
     }
 
     return (
