@@ -11,6 +11,7 @@ const ProductCard = ({item}) => {
     const navigate = useNavigate();
 
 
+    //! put(update)
     const handleMinus =async () => {
         if(amount > 0) {
             try {
@@ -25,6 +26,7 @@ const ProductCard = ({item}) => {
         
     }
 
+    //! put(update)
     const handlePlus =async () => {
         try {
             await axios.put(`${url}/${id}`, { ...item, amount: amount + 1 })
@@ -34,6 +36,7 @@ const ProductCard = ({item}) => {
         getProducts()
     }
 
+    //! delete
     const handleDelete =async () => {
         try {
             await axios.delete(`${url}/${id}`)
