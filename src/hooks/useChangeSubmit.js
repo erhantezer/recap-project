@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -15,7 +16,7 @@ const initialState = {
 
 const useChangeSubmit = () => {
     const [formChange, setFormChange] = useState(initialState);
-
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => { //! post işlemi yapmak gerek
         e.preventDefault()
@@ -24,6 +25,7 @@ const useChangeSubmit = () => {
         } catch (error) {
             console.log(error)
         }
+        navigate("/product-list")
     }
 
     const handleChange = (e) => {
