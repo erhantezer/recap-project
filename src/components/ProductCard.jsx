@@ -24,13 +24,13 @@ const ProductCard = ({item}) => {
                     <div className="col-md-7">
                         <div className="card-body">
                             <h5 className="card-title" role="button" >
-                                name
+                                {name}
                             </h5>
                             <div className="product-price">
                                 <p className="text-warning h2">
                                     $
                                     <span className="damping-price">
-                                        price
+                                        {(price * dampingRate).toFixed(2)}
                                     </span>
                                     <span className="h5 text-dark text-decoration-line-through">
                                         price
