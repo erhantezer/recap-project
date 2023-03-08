@@ -11,10 +11,10 @@ const ProductCard = ({item}) => {
     const navigate = useNavigate();
 
 
-    const handleMinus = () => {
+    const handleMinus =async () => {
         if(amount > 0) {
             try {
-                axios.put(`${url}/${id}`, {...item, amount: amount - 1})
+                await axios.put(`${url}/${id}`, {...item, amount: amount - 1})
             } catch (error) {
                 console.log(error)
             }
@@ -25,17 +25,22 @@ const ProductCard = ({item}) => {
         
     }
 
-    const handlePlus = () => {
+    const handlePlus =async () => {
         try {
-            axios.put(`${url}/${id}`, { ...item, amount: amount + 1 })
+            await axios.put(`${url}/${id}`, { ...item, amount: amount + 1 })
         } catch (error) {
             console.log(error)
         }
         getProducts()
     }
-    
-    const handleDelete = () => {
-        
+
+    const handleDelete =async () => {
+        try {
+            await axios.delete(`${url}/${id}`)
+        } catch (error) {
+            console.log(error)
+        }
+        getProducts()
     }
 
     return (
