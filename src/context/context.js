@@ -20,7 +20,7 @@ export const AppProvider = ({ children }) => {
         setLoading(true)
         try {
             const { data } = await axios(url)
-            setProducts(data)
+            data.map((item) => setProducts(item))
             setLoading(false)
             setError(false)
         } catch (error) {

@@ -11,7 +11,7 @@ const ProductForm = () => {
             <h1 className="text-center">New Product</h1>
             <form className="p-2" onSubmit={handleSubmit} >
                 <div className="mb-3">
-                    <label for="add-name" className="form-label">
+                    <label htmlFor="add-name" className="form-label">
                         Product Name
                     </label>
                     <input
@@ -24,7 +24,7 @@ const ProductForm = () => {
                     />
                 </div>
                 <div className="mb-3">
-                    <label for="add-price" className="form-label">
+                    <label htmlFor="add-price" className="form-label">
                         Product Price
                     </label>
                     <input
@@ -37,7 +37,7 @@ const ProductForm = () => {
                     />
                 </div>
                 <div className="mb-3">
-                    <label for="add-quantity" className="form-label">
+                    <label htmlFor="add-quantity" className="form-label">
                         Product Quantity
                     </label>
                     <input
@@ -49,7 +49,7 @@ const ProductForm = () => {
                         required
                     />
                 </div>
-                <label for="add-image" className="form-label">
+                <label htmlFor="add-image" className="form-label">
                     Product Image
                 </label>
                 <div className="input-group mb-3">
