@@ -28,7 +28,7 @@ const useChangeSubmit = () => {
         navigate("/product-list")
     }
 
-    const handleChange = (e) => {
+    const handleChange = (e) => { //! input değerlerinin değişimini obje içinde aldık 
         setFormChange({ ...formChange, [e.target.id]: e.target.value })
         //change eventının gerçekleştiği inputtaki id attribute u ile 
         //formChange key değerlerim aynı olduğu için dinamik bir şekilde formData mı güncelleybiliyorum
