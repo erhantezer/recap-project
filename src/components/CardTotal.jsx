@@ -1,36 +1,42 @@
 import React from 'react'
 import { useGlobalContext } from '../context/context'
 
+const taxRate = 0.18;
+const shipping = 25;
+
 const CardTotal = () => {
     const {products} = useGlobalContext();
 
+    const subTotal = products.reduce((acc, product) => product.price * product.amount * product.dampingRate + acc, 0);
+    console.log(subTotal);
+
     return (
-        <table class="table w-100">
+        <table className="table w-100">
             <tbody>
                 <tr className='text-end'>
-                    <th scope="row">1</th>
+                    <th >1</th>
                     <td>
 
                     </td>
                     
                 </tr>
                 <tr>
-                    <th scope="row">2</th>
+                    <th >2</th>
                     <td>
 
                     </td>
                     
                 </tr>
                 <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">
+                    <th >3</th>
+                    <td >
 
                     </td>
                     
                 </tr>
                 <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">
+                    <th >3</th>
+                    <td >
                         
                     </td>
                     
