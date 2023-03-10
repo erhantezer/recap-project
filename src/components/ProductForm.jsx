@@ -4,11 +4,11 @@ import useChangeSubmit from '../hooks/useChangeSubmit';
 
 
 const ProductForm = () => {
-    const { handleChange, handleSubmit, formChange } = useChangeSubmit();
+    const { handleChange, handleSubmit, formChange, text } = useChangeSubmit();
 
     return (
         <article id="add-product" className="mb-4 mt-4">
-            <h1 className="text-center">New Product</h1>
+            <h1 className="text-center">{text} Product</h1>
             <form className="p-2" onSubmit={handleSubmit} >
                 <div className="mb-3">
                     <label htmlFor="add-name" className="form-label">

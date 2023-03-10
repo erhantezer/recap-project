@@ -22,6 +22,7 @@ const ProductList = () => {
                                     <ProductCard
                                         key={item.id}
                                         item={item}
+                                        text= "New"
                                     />
                                 );
                             })}
