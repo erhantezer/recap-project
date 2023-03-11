@@ -28,5 +28,6 @@ const AppRouter = () => {
 
 export default AppRouter
 
-//! login register sayfası eklenerek session ve local storage ile dinamik bir yapıyla da giriş yapılıp 
-//! privateRouter aktif hale getirilebilirdi
+//! login register sayfası eklenerek session ve local storage ile dinamik bir yapıyla da giriş yapılıp
+//! privateRouter aktif hale getirilebilirdi;
+//!  https://beta.reactjs.org/   yeni değişiklikler beta sürümünden eklenebilir
