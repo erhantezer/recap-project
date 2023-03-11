@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UpdateForm = () => {
+const UpdateForm = ({text, handleChange, handleSubmit, formUpdate}) => {
     return (
         <article id="add-product" className="mb-4 mt-4">
             <h1 className="text-center">{text} Product</h1>
@@ -13,7 +13,7 @@ const UpdateForm = () => {
                         type="text"
                         className="form-control"
                         id="name"
-                        value={formChange.name}
+                        value={formUpdate.name}
                         onChange={handleChange}
                         required
                     />
@@ -26,7 +26,7 @@ const UpdateForm = () => {
                         type="number"
                         className="form-control"
                         id="price"
-                        value={formChange.number}
+                        value={formUpdate.number}
                         onChange={handleChange}
                         required
                     />
@@ -39,7 +39,7 @@ const UpdateForm = () => {
                         type="number"
                         className="form-control"
                         id="amount"
-                        value={formChange.number}
+                        value={formUpdate.number}
                         onChange={handleChange}
                         required
                     />
@@ -55,7 +55,7 @@ const UpdateForm = () => {
                         type="url"
                         className="form-control"
                         id="image"
-                        value={formChange.image}
+                        value={formUpdate.image}
                         onChange={handleChange}
                         aria-describedby="basic-addon3"
                         required
@@ -63,7 +63,7 @@ const UpdateForm = () => {
                 </div>
                 <div className="text-center d-grid mt-5">
                     <button type="submit" className="add-to-cart btn btn-success btn-sm p-2 fw-bolder md-block fs-5">
-                        <i className="fa-solid fa-cart-plus me-2"></i>Save To New Product
+                        <i className="fa-solid fa-cart-plus me-2"></i>Save To {text} Product
                     </button>
                 </div>
             </form>
