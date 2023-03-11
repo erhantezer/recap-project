@@ -40,3 +40,6 @@ console.log(item)
 }
 
 export default UpdateProduct
+
+//! 2 farklı sayfada çağırdım extra bir component ekledim istenirse aynı formda da çağrılabilirdi hemupdate hem product;
+//! text propsu sadece görüntü olsun diye ekledim 
