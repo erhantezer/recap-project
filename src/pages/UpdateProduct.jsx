@@ -7,15 +7,18 @@ import axios from 'axios';
 const url = "https://63a16242a543280f7754aaa3.mockapi.io/products";
 
 const UpdateProduct = () => {
-  const { state:item } = useLocation();
+  const { state: item } = useLocation();
   const [formUpdate, setFormUpdate] = useState(item); //!edite bastığımızda gönderdiğimiz state değerini item olarak formupdate ilk değerini oluştururruz
   const navigate = useNavigate(); //! update işlemi tamamlandığında geldiğim sayfaya geri dönmek için
 
+  //! formdaki değişecek input değerleri için
   const handleChange = (e) => {
     setFormUpdate({ ...formUpdate, [e.target.id]: e.target.value })
   };
-console.log(item)
+  console.log(item)
 
+
+  //! formu gönderdiğimizde ne işlem yapacağını ekledik 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
