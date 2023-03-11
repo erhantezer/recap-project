@@ -8,7 +8,7 @@ const url = "https://63a16242a543280f7754aaa3.mockapi.io/products";
 
 const UpdateProduct = () => {
   const { state:item } = useLocation();
-  const [formUpdate, setFormUpdate] = useState(item);
+  const [formUpdate, setFormUpdate] = useState(item); //!edite bastığımızda gönderdiğimiz state değerini item olarak formupdate ilk değerini oluştururruz
   const navigate = useNavigate(); //! update işlemi tamamlandığında geldiğim sayfaya geri dönmek için
 
   const handleChange = (e) => {
