@@ -20,7 +20,7 @@ console.log(item)
     e.preventDefault()
     try {
       await axios.put(`${url}/${item.id}`, formUpdate)
-      navigate(-1)
+      navigate(-1) //!bir önceki sayfaya edit butonuna bastığımız sayfaya geri git
     } catch (error) {
       console.log(error)
     }
