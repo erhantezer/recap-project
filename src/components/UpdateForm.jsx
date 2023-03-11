@@ -1,6 +1,8 @@
-import React from 'react'
 
+//! ProductForm componentinin aynısıdır
 const UpdateForm = ({text, handleChange, handleSubmit, formUpdate}) => {
+
+
     return (
         <article id="add-product" className="mb-4 mt-4">
             <h1 className="text-center">{text} Product</h1>
